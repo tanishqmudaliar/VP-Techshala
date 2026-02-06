@@ -1,0 +1,82 @@
+.signup {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: radial-gradient(
+    1200px 600px at 10% 10%,
+    #e8f5e9 0%,
+    #f5f7fb 45%,
+    #ffffff 100%
+  );
+  padding: 24px 16px;
+}
+
+.spform {
+  background-color: white;
+  padding: 28px 24px 20px;
+  width: min(620px, 92vw);
+  min-width: 320px;
+  height: max-content;
+  min-height: 440px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.spform1 {
+  display: grid;
+  place-items: center;
+  gap: 4px;
+}
+
+.auth-header {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.auth-header > h1 {
+  font-family: "Libre Franklin", sans-serif;
+  margin: 8px 0 4px;
+  font-size: 28px;
+  color: #1b1f24;
+}
+
+.auth-subtitle {
+  margin: 0 0 8px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.auth-section-title {
+  width: 90%;
+  margin: 6px auto 8px;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.logo-login {
+  width: 220px;
+}
+
+.spfooter {
+  padding-bottom: 10px;
+  display: flex;
+}
+
+@media screen and (max-width: 20cm) {
+  .signup {
+    overflow-y: hidden;
+    background: white;
+    min-height: 90vh;
+  }
+  .spform {
+    padding: 20px 16px;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

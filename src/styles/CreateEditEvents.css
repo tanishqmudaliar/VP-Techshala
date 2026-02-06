@@ -1,0 +1,24 @@
+.ceevents {
+  padding: 96px 4vw 24px;
+  display: flex;
+  min-height: 56vh;
+  justify-content: center;
+}
+
+.cee1 {
+  width: min(1000px, 96vw);
+  border-radius: 10px;
+  background-color: lightgray;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.cee1 > h1 {
+  font-family: "Ramaraja", serif;
+  margin: 0%;
+}
+
+.cform {
+  display: grid;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}

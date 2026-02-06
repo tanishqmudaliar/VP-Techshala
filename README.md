@@ -1,70 +1,212 @@
-# Getting Started with Create React App
+# VP Techshala (Demo Portal)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and runs on [Firebase](https://firebase.google.com/).
+A modern demo portal built for a hackathon showcase—highlighting campus events, a media gallery, and participant management with local demo authentication.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-17.0.2-61DAFB?logo=react&logoColor=white)
+![CRA](https://img.shields.io/badge/CRA-5.0.0-09D3AC?logo=createreactapp&logoColor=white)
+![MUI](https://img.shields.io/badge/MUI-5.5.2-007FFF?logo=mui&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+- [Deployment](#deployment)
+- [Development Notes](#development-notes)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+VP Techshala is a resume‑ready demo portal that showcases campus events, a media gallery, and participant management. It uses a local demo auth system (no backend required) and stores data in `localStorage` for easy presentation.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Authentication (Demo)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Demo Login**: Select User/Admin roles from a dropdown
+- **Local Accounts**: Signups and logins stored in `localStorage`
+- **Role‑Based UI**: Admin sees participants; user can register
 
-### `npm run eject`
+### Events
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Single Showcase Event**: Hardcoded “ROBOWAR” event
+- **Local Registration**: Participants stored locally
+- **Admin Participants View**: Review local participant list
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` anytime. This command will remove the single-build dependency from your project.
+### Media
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you're on your own.
+- **Image Gallery**: Responsive, static gallery
+- **Video Gallery**: Embedded YouTube demos
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be helpful if you couldn't customize it when you are ready for it.
+### UI/UX
 
-## Learn More
+- **Modern Auth UI**: Polished login/signup pages
+- **Responsive Layouts**: Improved CSS for key sections
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-Check out the [React documentation](https://reactjs.org/) to learn React.
+## Tech Stack
 
-### Code Splitting
+| Layer         | Technologies               |
+| ------------- | -------------------------- |
+| **Framework** | React 17 (CRA)             |
+| **Routing**   | React Router v6            |
+| **UI**        | MUI 5                      |
+| **Styling**   | CSS modules by page        |
+| **State**     | React hooks + localStorage |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+┌───────────────────────────────────────────────────────────┐
+│                  VP TECHSHALA DEMO PORTAL                 │
+├───────────────────────────────────────────────────────────┤
+│                                                           │
+│  ┌─────────────────────────────┐  ┌─────────────────────┐ │
+│  │         Auth Views          │  │     Event Views     │ │
+│  │  • Login / Signup           │  │  • ROBOWAR event    │ │
+│  │  • Demo dropdown            │  │  • Local register   │ │
+│  └──────────────┬──────────────┘  └──────────┬──────────┘ │
+│                 │                            │            │
+│  ┌──────────────▼──────────────┐  ┌──────────▼──────────┐ │
+│  │     localStorage Layer      │  │   Media Galleries   │ │
+│  │  • Users + session          │  │  • Images + Videos  │ │
+│  │  • Participants             │  │  • Static assets    │ │
+│  └─────────────────────────────┘  └─────────────────────┘ │
+│                                                           │
+└───────────────────────────────────────────────────────────┘
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Getting Started
 
-### Advanced Configuration
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Node.js 16+
+- npm
 
-### Deployment
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Install dependencies**
 
-### `npm run build` fails to minify
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. **Start development server**
+
+   ```bash
+   npm start
+   ```
+
+3. **Open browser**
+
+   Navigate to `http://localhost:3000`
+
+---
+
+## Project Structure
+
+```
+vp-hackathon/
+├── public/
+│   ├── assets/               # Static images
+│   ├── index.html            # App shell metadata
+│   └── manifest.json         # PWA metadata
+├── src/
+│   ├── components/           # UI components
+│   ├── context/              # Local auth context
+│   ├── helper/               # Local data helpers
+│   ├── styles/               # Page-level CSS
+│   ├── App.js                # Routes
+│   └── index.js              # App entry
+├── package.json
+└── README.md
+```
+
+---
+
+## Configuration
+
+No backend setup required. Demo data is stored locally using `localStorage`:
+
+- `vp_demo_users`
+- `vp_demo_session`
+- `vp_demo_participants`
+
+Demo credentials:
+
+- **User**: user@demo.com / user123
+- **Admin**: admin@demo.com / admin123
+
+---
+
+## Deployment
+
+You can deploy with any static host:
+
+- Vercel
+- Netlify
+- GitHub Pages
+
+Build command:
+
+```bash
+npm run build
+```
+
+---
+
+## Development Notes
+
+- Firebase and EmailJS were removed in favor of local demo mode.
+- The event catalog is intentionally limited to a single showcase event.
+- Assets are served from `public/assets` for simplicity.
+
+---
+
+## Troubleshooting
+
+### Login fails with valid credentials
+
+- Clear browser storage and retry:
+  - `localStorage.clear()`
+
+### Styles look misaligned
+
+- Confirm you’re not zoomed in/out in the browser
+- Refresh after pulling updated CSS
+
+---
+
+## Contributing
+
+Contributions are welcome. Open a PR with a short description and screenshots.
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Made with ❤️ for VP Techshala demo showcase.
