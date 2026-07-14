@@ -65,13 +65,13 @@ The app is organized around a few core flows: demo login/signup, event browsing,
 
 ## Tech Stack
 
-| Layer | Technologies |
-| --- | --- |
-| Framework | React 17, Create React App |
-| Routing | React Router v6 |
-| UI | Material UI 5, React Bootstrap |
-| Media | react-player |
-| State | React hooks, context, localStorage |
+| Layer     | Technologies                       |
+| --------- | ---------------------------------- |
+| Framework | React 17, Create React App         |
+| Routing   | React Router v6                    |
+| UI        | Material UI 5, React Bootstrap     |
+| Media     | react-player                       |
+| State     | React hooks, context, localStorage |
 
 ---
 
@@ -81,22 +81,22 @@ The app is organized around a few core flows: demo login/signup, event browsing,
 ┌──────────────────────────────────────────────────────────────┐
 │                        VP TECHSHALA                          │
 ├──────────────────────────────────────────────────────────────┤
-│  Routes                                                       │
-│  ├─ /login /signup                                            │
-│  ├─ /home /profile/:id                                        │
-│  ├─ /events /events/:id /events/create-edit-events            │
-│  ├─ /gallery/images /gallery/videos                           │
-│  └─ /contactus /404                                           │
+│  Routes                                                      │
+│  ├─ /login /signup                                           │
+│  ├─ /home /profile/:id                                       │
+│  ├─ /events /events/:id /events/create-edit-events           │
+│  ├─ /gallery/images /gallery/videos                          │
+│  └─ /contactus /404                                          │
 │                                                              │
-│  Shared UI                                                    │
-│  ├─ Header + Drawer navigation                                │
-│  ├─ Auth context                                              │
-│  └─ MUI / Bootstrap components                                │
+│  Shared UI                                                   │
+│  ├─ Header + Drawer navigation                               │
+│  ├─ Auth context                                             │
+│  └─ MUI / Bootstrap components                               │
 │                                                              │
-│  Browser Data                                                 │
-│  ├─ vp_demo_users                                             │
-│  ├─ vp_demo_session                                           │
-│  └─ vp_demo_participants                                      │
+│  Browser Data                                                │
+│  ├─ vp_demo_users                                            │
+│  ├─ vp_demo_session                                          │
+│  └─ vp_demo_participants                                     │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -163,13 +163,13 @@ VP-Techshala/
 
 No environment variables are required. The app uses browser storage and seeded demo credentials.
 
-| Setting | Purpose | Default |
-| --- | --- | --- |
-| `vp_demo_users` | Stored demo user records | Seeded automatically |
-| `vp_demo_session` | Active signed-in user ID | Set on login/signup |
-| `vp_demo_participants` | Event registrations | Stored per event |
-| Demo user | Test login | `user@demo.com` / `user123` |
-| Demo admin | Admin login | `admin@demo.com` / `admin123` |
+| Setting                | Purpose                  | Default                       |
+| ---------------------- | ------------------------ | ----------------------------- |
+| `vp_demo_users`        | Stored demo user records | Seeded automatically          |
+| `vp_demo_session`      | Active signed-in user ID | Set on login/signup           |
+| `vp_demo_participants` | Event registrations      | Stored per event              |
+| Demo user              | Test login               | `user@demo.com` / `user123`   |
+| Demo admin             | Admin login              | `admin@demo.com` / `admin123` |
 
 ---
 
