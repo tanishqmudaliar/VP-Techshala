@@ -23,5 +23,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Organized auth and participant data into shared browser-storage helpers
 - Standardized the app layout around route-based screens for the demo showcase
 
+## [0.0.1] - 2026-02-06
+
+### Changed
+
+- Removed Firebase configuration to switch VP Techshala into local demo mode.
+- Dropped the external backend dependency before the full demo portal build.
+
 [Unreleased]: https://github.com/tanishqmudaliar/VP-Techshala/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/tanishqmudaliar/VP-Techshala/releases/tag/v0.1.0
+[0.0.1]: https://github.com/tanishqmudaliar/VP-Techshala/releases/tag/v0.0.1
