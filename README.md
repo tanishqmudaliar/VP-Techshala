@@ -1,6 +1,6 @@
-# VP Techshala (Demo Portal)
+# VP Techshala
 
-A modern demo portal built for a hackathon showcase—highlighting campus events, a media gallery, and participant management with local demo authentication.
+A frontend-only demo portal for student tech clubs. It showcases event listings, participant registration, profile management, and a media gallery with local demo authentication.
 
 ![React](https://img.shields.io/badge/React-17.0.2-61DAFB?logo=react&logoColor=white)
 ![CRA](https://img.shields.io/badge/CRA-5.0.0-09D3AC?logo=createreactapp&logoColor=white)
@@ -17,11 +17,11 @@ A modern demo portal built for a hackathon showcase—highlighting campus events
 - [Architecture](#architecture)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+  - [Quick Setup](#quick-setup)
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
-- [Development Notes](#development-notes)
+- [Known Limitations](#known-limitations)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
@@ -30,68 +30,74 @@ A modern demo portal built for a hackathon showcase—highlighting campus events
 
 ## Overview
 
-VP Techshala is a resume‑ready demo portal that showcases campus events, a media gallery, and participant management. It uses a local demo auth system (no backend required) and stores data in `localStorage` for easy presentation.
+VP Techshala is a hackathon demo portal built with React and Material UI. It provides a polished campus-club experience without a backend, using `localStorage` for demo users, sessions, and registrations.
+
+The app is organized around a few core flows: demo login/signup, event browsing, gallery viewing, and participant management for the featured `ROBOWAR` event.
 
 ---
 
 ## Features
 
-### Authentication (Demo)
+### Authentication
 
-- **Demo Login**: Select User/Admin roles from a dropdown
-- **Local Accounts**: Signups and logins stored in `localStorage`
-- **Role‑Based UI**: Admin sees participants; user can register
+- Demo login and signup flow with role selection for **User** and **Admin**
+- Local session persistence with seeded demo accounts
+- Profile pages powered by a shared auth context
 
 ### Events
 
-- **Single Showcase Event**: Hardcoded “ROBOWAR” event
-- **Local Registration**: Participants stored locally
-- **Admin Participants View**: Review local participant list
+- Featured `ROBOWAR` event landing and detailed event page
+- Local participant registration stored in the browser
+- Admin-friendly participant view for reviewing submissions
 
-### Media
+### Media Gallery
 
-- **Image Gallery**: Responsive, static gallery
-- **Video Gallery**: Embedded YouTube demos
+- Separate image and video gallery routes
+- Static showcase assets for the hackathon presentation
 
-### UI/UX
+### Navigation & UI
 
-- **Modern Auth UI**: Polished login/signup pages
-- **Responsive Layouts**: Improved CSS for key sections
+- Drawer-based navigation with breadcrumbs
+- Route-based screens for the full portal flow
+- Contact, profile, and not-found pages for a complete demo experience
 
 ---
 
 ## Tech Stack
 
-| Layer         | Technologies               |
-| ------------- | -------------------------- |
-| **Framework** | React 17 (CRA)             |
-| **Routing**   | React Router v6            |
-| **UI**        | MUI 5                      |
-| **Styling**   | CSS modules by page        |
-| **State**     | React hooks + localStorage |
+| Layer | Technologies |
+| --- | --- |
+| Framework | React 17, Create React App |
+| Routing | React Router v6 |
+| UI | Material UI 5, React Bootstrap |
+| Media | react-player |
+| State | React hooks, context, localStorage |
 
 ---
 
 ## Architecture
 
 ```
-┌───────────────────────────────────────────────────────────┐
-│                  VP TECHSHALA DEMO PORTAL                 │
-├───────────────────────────────────────────────────────────┤
-│                                                           │
-│  ┌─────────────────────────────┐  ┌─────────────────────┐ │
-│  │         Auth Views          │  │     Event Views     │ │
-│  │  • Login / Signup           │  │  • ROBOWAR event    │ │
-│  │  • Demo dropdown            │  │  • Local register   │ │
-│  └──────────────┬──────────────┘  └──────────┬──────────┘ │
-│                 │                            │            │
-│  ┌──────────────▼──────────────┐  ┌──────────▼──────────┐ │
-│  │     localStorage Layer      │  │   Media Galleries   │ │
-│  │  • Users + session          │  │  • Images + Videos  │ │
-│  │  • Participants             │  │  • Static assets    │ │
-│  └─────────────────────────────┘  └─────────────────────┘ │
-│                                                           │
-└───────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                        VP TECHSHALA                          │
+├──────────────────────────────────────────────────────────────┤
+│  Routes                                                       │
+│  ├─ /login /signup                                            │
+│  ├─ /home /profile/:id                                        │
+│  ├─ /events /events/:id /events/create-edit-events            │
+│  ├─ /gallery/images /gallery/videos                           │
+│  └─ /contactus /404                                           │
+│                                                              │
+│  Shared UI                                                    │
+│  ├─ Header + Drawer navigation                                │
+│  ├─ Auth context                                              │
+│  └─ MUI / Bootstrap components                                │
+│                                                              │
+│  Browser Data                                                 │
+│  ├─ vp_demo_users                                             │
+│  ├─ vp_demo_session                                           │
+│  └─ vp_demo_participants                                      │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -100,45 +106,54 @@ VP Techshala is a resume‑ready demo portal that showcases campus events, a med
 
 ### Prerequisites
 
-- Node.js 16+
+- Node.js 16 or newer
 - npm
 
-### Installation
+### Quick Setup
 
-1. **Install dependencies**
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. **Start development server**
+2. Start the app:
 
    ```bash
    npm start
    ```
 
-3. **Open browser**
-
-   Navigate to `http://localhost:3000`
+3. Open `http://localhost:3000`
 
 ---
 
 ## Project Structure
 
 ```
-vp-hackathon/
+VP-Techshala/
 ├── public/
-│   ├── assets/               # Static images
-│   ├── index.html            # App shell metadata
-│   └── manifest.json         # PWA metadata
+│   ├── assets/
+│   ├── favicon.ico
+│   ├── index.html
+│   └── robots.txt
 ├── src/
-│   ├── components/           # UI components
-│   ├── context/              # Local auth context
-│   ├── helper/               # Local data helpers
-│   ├── styles/               # Page-level CSS
-│   ├── App.js                # Routes
-│   └── index.js              # App entry
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Login.js
+│   │   ├── SignUp.js
+│   │   ├── Events.js
+│   │   ├── Profile.js
+│   │   └── Videos.js
+│   ├── context/
+│   │   └── UserAuthContext.js
+│   ├── helper/
+│   │   └── localData.js
+│   ├── styles/
+│   ├── App.js
+│   └── index.js
 ├── package.json
+├── package-lock.json
+├── LICENSE
 └── README.md
 ```
 
@@ -146,60 +161,61 @@ vp-hackathon/
 
 ## Configuration
 
-No backend setup required. Demo data is stored locally using `localStorage`:
+No environment variables are required. The app uses browser storage and seeded demo credentials.
 
-- `vp_demo_users`
-- `vp_demo_session`
-- `vp_demo_participants`
-
-Demo credentials:
-
-- **User**: user@demo.com / user123
-- **Admin**: admin@demo.com / admin123
+| Setting | Purpose | Default |
+| --- | --- | --- |
+| `vp_demo_users` | Stored demo user records | Seeded automatically |
+| `vp_demo_session` | Active signed-in user ID | Set on login/signup |
+| `vp_demo_participants` | Event registrations | Stored per event |
+| Demo user | Test login | `user@demo.com` / `user123` |
+| Demo admin | Admin login | `admin@demo.com` / `admin123` |
 
 ---
 
 ## Deployment
 
-You can deploy with any static host:
-
-- Vercel
-- Netlify
-- GitHub Pages
-
-Build command:
+Build the app for production with:
 
 ```bash
 npm run build
 ```
 
+You can host the generated static files on Netlify, Vercel, GitHub Pages, or any other static hosting service.
+
 ---
 
-## Development Notes
+## Known Limitations
 
-- Firebase and EmailJS were removed in favor of local demo mode.
-- The event catalog is intentionally limited to a single showcase event.
-- Assets are served from `public/assets` for simplicity.
+- Mobile layout is not implemented; the app shows a desktop-only placeholder on small screens.
+- Authentication and registrations are demo-only and reset when browser storage is cleared.
+- Event and gallery content is static, so changes must be made in the source files.
 
 ---
 
 ## Troubleshooting
 
-### Login fails with valid credentials
+### Demo login keeps failing
 
-- Clear browser storage and retry:
-  - `localStorage.clear()`
+- Make sure you selected the matching demo role and credentials.
+- Clear browser storage if stale local data is causing conflicts.
 
-### Styles look misaligned
+### The mobile view shows "Coming Soon"
 
-- Confirm you’re not zoomed in/out in the browser
-- Refresh after pulling updated CSS
+- This is expected; the app is built for desktop presentation only.
+
+### Participant data disappeared
+
+- `localStorage` was cleared or the browser profile was reset.
 
 ---
 
 ## Contributing
 
-Contributions are welcome. Open a PR with a short description and screenshots.
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Open a pull request with a clear summary.
 
 ---
 
