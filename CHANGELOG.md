@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-07-14
+## [1.0.0] - 2026-07-14
 
 ### Added
 
@@ -30,6 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed Firebase configuration to switch VP Techshala into local demo mode.
 - Dropped the external backend dependency before the full demo portal build.
 
-[Unreleased]: https://github.com/tanishqmudaliar/VP-Techshala/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/tanishqmudaliar/VP-Techshala/releases/tag/v0.1.0
+[Unreleased]: https://github.com/tanishqmudaliar/VP-Techshala/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/tanishqmudaliar/VP-Techshala/releases/tag/v1.0.0
 [0.0.1]: https://github.com/tanishqmudaliar/VP-Techshala/releases/tag/v0.0.1
