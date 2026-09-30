@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/HomePage.css";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
-import Carousel from "./Carousel.js";
-import Header from "./Header.js";
+import Carousel from "./Carousel.jsx";
+import Header from "./Header.jsx";
 import Footer from "./Footer";
 
 function HomePage() {
