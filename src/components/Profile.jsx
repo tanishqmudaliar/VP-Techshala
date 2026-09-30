@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Profile.css";
-import Header from "./Header.js";
+import Header from "./Header.jsx";
 import { useUserAuth } from "../context/UserAuthContext";
 import {
   Divider,
