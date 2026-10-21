@@ -1,44 +1,47 @@
-.profile {
-  margin: 0 20px;
-  height: fit-content;
-  padding: 96px 0 24px;
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container {
+  flex: 1;
+  padding: 88px 5vw 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-layout {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+  gap: 32px;
   align-items: flex-start;
 }
 
-.section1 {
-  width: min(420px, 92vw);
+.profile-sidebar {
   flex: 1 1 320px;
-  border-radius: 10px;
-  margin-top: 0;
-  padding: 20px;
-  background-color: #dbdbdb;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: min(380px, 100%);
 }
 
-.sectionh1 {
-  font-family: "Libre Franklin", sans-serif;
-  margin: 0%;
-  font-size: large;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.profile-main {
+  flex: 2.5 1 540px;
+  width: min(860px, 100%);
 }
 
-.section2 > h1 {
-  font-family: "Libre Franklin", sans-serif;
-  margin: 0%;
-  margin-bottom: 20px;
-}
+@media screen and (max-width: 860px) {
+  .profile-container {
+    padding: 76px 4vw 32px;
+  }
 
-.section2 {
-  width: min(900px, 92vw);
-  flex: 2 1 520px;
-  border-radius: 10px;
-  margin-top: 0;
-  padding: 20px;
-  background-color: #dbdbdb;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  .profile-layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .profile-sidebar,
+  .profile-main {
+    width: 100%;
+  }
 }

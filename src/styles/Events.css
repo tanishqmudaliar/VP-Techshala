@@ -1,83 +1,69 @@
-.events {
-  min-height: 53vh;
+.events-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-container {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  padding: 96px 4vw 24px;
-  justify-content: center;
+  gap: 28px;
+  padding: 88px 4vw 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   align-items: flex-start;
 }
 
 .ep1 {
-  border-radius: 5px;
-  background-color: lightgray;
-  width: min(380px, 92vw);
-  height: fit-content;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  flex: 1 1 320px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  width: min(340px, 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  flex: 1 1 300px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 
 .ep2 {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 5px;
-  background-color: lightgray;
-  width: min(860px, 92vw);
-  height: min-content;
-  flex: 2 1 520px;
-}
-
-.event_title {
-  font-family: "Ramaraja", serif;
-}
-
-.eventDesc > h1 {
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 15px;
-}
-
-.eventDesc {
-  overflow: auto;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  height: 110px;
-  width: 100%;
-  max-width: 560px;
+  flex: 2.5 1 560px;
+  width: min(880px, 100%);
 }
 
 .etitle {
-  height: 40px;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 5px;
-  gap: 8px;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.eventDesc {
+  margin: 12px 0 16px;
+  transition: all 0.3s ease;
 }
 
 .efooter {
-  height: 25px;
-  display: flex;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
 }
 
-.event_footer {
-  font-family: "Libre Franklin", sans-serif;
-}
+@media screen and (max-width: 900px) {
+  .events-container {
+    padding: 76px 4vw 32px;
+    gap: 20px;
+  }
 
-.sendemail {
-  display: none;
-}
+  .ep1 {
+    width: 100%;
+  }
 
-.eventthumbnail {
-  height: 40px;
-  margin-top: 0.6%;
-}
-
-.helpertext {
-  font-size: 15px;
-  margin: 0%;
-}
-
-.registerform {
-  display: grid;
-  width: fit-content;
+  .etitle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

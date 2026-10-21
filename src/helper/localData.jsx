@@ -1,6 +1,7 @@
 const USERS_KEY = "vp_demo_users";
 const SESSION_KEY = "vp_demo_session";
 const PARTICIPANTS_KEY = "vp_demo_participants";
+const EVENTS_KEY = "vp_demo_events";
 
 const demoUsers = [
   {
@@ -67,6 +68,34 @@ export function clearSession() {
 
 export function getSessionUserId() {
   return localStorage.getItem(SESSION_KEY);
+}
+
+export function getEvents() {
+  const raw = localStorage.getItem(EVENTS_KEY);
+  if (!raw) {
+    return [defaultEvent];
+  }
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) && parsed.length > 0 ? parsed : [defaultEvent];
+  } catch {
+    return [defaultEvent];
+  }
+}
+
+export function saveEvents(events) {
+  localStorage.setItem(EVENTS_KEY, JSON.stringify(events));
+}
+
+export function updateEvent(updatedEvent) {
+  const events = getEvents();
+  const index = events.findIndex((e) => e.id === updatedEvent.id);
+  if (index !== -1) {
+    events[index] = { ...events[index], ...updatedEvent };
+  } else {
+    events.push(updatedEvent);
+  }
+  saveEvents(events);
 }
 
 export function getParticipants() {
