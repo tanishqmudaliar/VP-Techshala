@@ -1,91 +1,109 @@
 .login {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  overflow-x: hidden;
   background: radial-gradient(
     1200px 600px at 10% 10%,
     #e8f5e9 0%,
     #f5f7fb 45%,
     #ffffff 100%
   );
-  padding: 24px 16px;
+  padding: 32px 16px;
+  box-sizing: border-box;
 }
 
 .lgform {
-  background-color: white;
-  padding: 28px 24px 20px;
-  width: min(560px, 92vw);
-  min-width: 320px;
-  height: max-content;
-  min-height: 460px;
+  background-color: #ffffff;
+  padding: 36px 32px 28px;
+  width: min(520px, 100%);
   border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.lgform1 {
-  display: grid;
-  place-items: center;
-  gap: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .auth-header {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-login {
+  width: 180px;
+  height: auto;
   margin-bottom: 12px;
 }
 
 .auth-header > h1 {
-  font-family: "Libre Franklin", sans-serif;
-  margin: 8px 0 4px;
-  font-size: 28px;
-  color: #1b1f24;
+  font-family: "Playfair Display", serif;
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
 }
 
 .auth-subtitle {
-  margin: 0 0 8px;
+  margin: 0;
   color: #6b7280;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .auth-section-title {
-  width: 90%;
-  margin: 6px auto 8px;
-  font-size: 12px;
-  letter-spacing: 0.6px;
+  width: 100%;
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  font-weight: 700;
   text-transform: uppercase;
-  color: #6b7280;
+  color: #2e7d32;
+  text-align: left;
 }
 
-.logo-login {
-  margin-top: 6px;
-  width: 220px;
+.lgform1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .lgfooter {
-  margin-top: 5px;
-  display: flex;
-  padding-bottom: 10px;
+  margin-top: 8px;
+  text-align: center;
 }
 
-.lgalert {
-  width: 100%;
-  display: grid;
-  place-items: center;
+.auth-link {
+  color: #2e7d32;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 20cm) {
+.auth-link:hover {
+  text-decoration: underline;
+  color: #1b5e20;
+}
+
+@media screen and (max-width: 600px) {
   .login {
-    overflow-y: hidden;
-    min-height: 90vh;
-    background: white;
+    padding: 20px 12px;
+    justify-content: flex-start;
   }
+
   .lgform {
-    padding: 20px 16px;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
+    padding: 24px 18px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .logo-login {
+    width: 150px;
+  }
+
+  .auth-header > h1 {
+    font-size: 22px;
   }
 }

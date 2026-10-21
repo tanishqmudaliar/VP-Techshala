@@ -1,24 +1,44 @@
-.pnf {
-    padding-top: 20vh;
-    height: 80vh;
-    justify-content: space-between;
-    background-color: white;
+.pnf-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.pnf1 {
-    margin-left: -20px;
-    color: green;
-    font-family: 'Libre Franklin', sans-serif;
-    height: 100px !important;
-    margin-bottom: -60px;
+.pnf-container {
+  flex: 1;
+  padding: 100px 4vw 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.pnf2 {
-    margin-left: 31%;
-    height: fit-content;
-    width: 70vh;
+.pnf-content {
+  text-align: center;
+  max-width: 680px;
+  width: 100%;
+}
+
+.tv-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 }
 
 .tv {
-    margin-top: 30px;
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 600px) {
+  .pnf-container {
+    padding: 80px 4vw 32px;
+  }
+
+  .tv {
+    max-width: 240px;
+  }
 }

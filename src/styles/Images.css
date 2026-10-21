@@ -1,71 +1,104 @@
-.images {
-  padding: 96px 4vw 24px;
+.gallery-page {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+}
+
+.gallery-container {
+  flex: 1;
+  padding: 88px 5vw 40px;
+  max-width: 1280px;
+  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  justify-content: center;
 }
 
-.im1 {
+.gallery-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.gallery-grid {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-.images img {
-  width: min(28vw, 320px);
-  max-width: 320px;
-  height: auto;
+.gallery-item {
+  position: relative;
+  margin: 0;
   border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  background-color: #e5e7eb;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.gallery-thumb {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.image1 {
-  border-radius: 16px;
+.gallery-item:hover .gallery-thumb {
+  transform: scale(1.05);
 }
 
-.image2 {
-  border-radius: 16px;
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  color: #ffffff;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+  text-align: left;
 }
 
-.im2 {
-  display: grid;
-  gap: 20px;
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
 }
 
-.image3 {
-  border-radius: 16px;
+.gallery-overlay-title {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
-.image4 {
-  border-radius: 16px;
+.gallery-overlay-desc {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 12px;
+  color: #e0e0e0;
+  line-height: 1.4;
 }
 
-.im3 {
-  display: grid;
-  gap: 20px;
-}
+@media screen and (max-width: 600px) {
+  .gallery-container {
+    padding: 76px 4vw 32px;
+  }
 
-.image5 {
-  border-radius: 16px;
-}
-.image6 {
-  border-radius: 16px;
-}
-.image7 {
-  border-radius: 16px;
-}
-.image8 {
-  border-radius: 16px;
-}
-
-.image9 {
-  border-radius: 16px;
-}
-
-@media screen and (max-width: 900px) {
-  .images img {
-    width: min(90vw, 420px);
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
   }
 }

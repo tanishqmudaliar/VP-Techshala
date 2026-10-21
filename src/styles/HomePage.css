@@ -1,56 +1,139 @@
 .homepage {
-  height: fit-content;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-banner {
+  margin-top: 64px;
+  width: 100%;
 }
 
 .vpbuilding {
-  margin-top: 1.5cm;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 94vh;
+  background-position: center;
+  height: clamp(340px, 60vh, 560px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vpbuilding2 {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 90vh;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
-.our_projects > h1 {
-  color: green;
+.hero-badge {
+  text-align: center;
+  color: #ffffff;
+  max-width: 760px;
+}
+
+.hero-badge-tag {
+  display: inline-block;
+  background: rgba(46, 125, 50, 0.9);
+  color: #ffffff;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero-title {
   font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  margin: 0;
+  color: #f0fdf4;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro_text {
+  max-width: 860px;
+  margin: 3.5rem auto 2.5rem;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.intro_text > h1 {
+  color: #2e7d32;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.intro-body {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.8;
+  color: #374151;
+  text-align: justify;
+  text-align-last: center;
+  margin: 0;
 }
 
 .our_projects {
-  display: grid;
-  place-items: center;
+  max-width: 1100px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.our_projects > h1 {
+  color: #2e7d32;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 28px;
 }
 
 .projects {
   display: flex;
-}
-
-.intro_text {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.intro_text > h1 {
-  color: green;
-  font-family: "Playfair Display", serif;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .footer_carousel {
-  display: grid;
-  place-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
-@media screen and (max-width: 20cm) {
-  .vpbuilding {
-    height: 20vh;
-    margin-top: 1.5cm;
+@media (max-width: 600px) {
+  .hero-banner {
+    margin-top: 56px;
   }
 
-  .projects {
-    display: grid;
+  .intro_text {
+    margin: 2rem auto 1.5rem;
+  }
+
+  .our_projects {
+    margin: 1.5rem auto 2rem;
   }
 }

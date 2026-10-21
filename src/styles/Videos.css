@@ -1,29 +1,60 @@
-.videos {
+.videos-page {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.videos-container {
+  flex: 1;
+  padding: 88px 5vw 40px;
+  max-width: 1280px;
+  margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.vd {
-  padding: 96px 4vw 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+.videos-header {
+  text-align: center;
+  margin-bottom: 32px;
 }
 
-.vdrest {
-  padding: 24px 4vw 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
 }
 
-.vdrest1 {
-  padding: 24px 4vw 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-  padding-bottom: 30px;
+.player-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.video-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+@media screen and (max-width: 768px) {
+  .videos-container {
+    padding: 76px 4vw 32px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
